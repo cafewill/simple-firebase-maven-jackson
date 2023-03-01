@@ -4,10 +4,10 @@ This is a simple firebase util (maven, jackson)
 
 ## Features
 
-* FirebaseUtil.exec (single, title, body)
-* FirebaseUtil.exec (single, title, body, link)
-* FirebaseUtil.send (single, title, body)
-* FirebaseUtil.send (single, title, body, link)
+* FirebaseUtil.exec (token, title, body)
+* FirebaseUtil.exec (token, title, body, link)
+* FirebaseUtil.send (token, title, body)
+* FirebaseUtil.send (token, title, body, link)
 
 ## Sample Code
 
