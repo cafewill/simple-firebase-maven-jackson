@@ -24,8 +24,8 @@ public class SampleSingle
             
             String response = "";
             
-            String single = "FIREBASE-DEVICE-TOKEN";
-        	response = FirebaseUtil.exec (single, title, body); // no link
+            String token = "FIREBASE-DEVICE-TOKEN";
+        	response = FirebaseUtil.exec (token, title, body); // no link
         	// response = FirebaseUtil.send (single, title, body); // no link
         	// response = FirebaseUtil.exec (single, title, body, link); // use link 
         	// response = FirebaseUtil.send (single, title, body, link); // use link 

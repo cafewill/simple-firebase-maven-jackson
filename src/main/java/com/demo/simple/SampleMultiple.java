@@ -25,13 +25,13 @@ public class SampleMultiple
             String response = "";
             
             // max : 1 ~ 1000
-            List <String> multi = new ArrayList <> ();
-        	multi.add ("FIREBASE-DEVICE-TOKEN #1");
-        	multi.add ("FIREBASE-DEVICE-TOKEN #2");
-        	multi.add ("FIREBASE-DEVICE-TOKEN #3");
-        	multi.add ("FIREBASE-DEVICE-TOKEN #4");
-        	multi.add ("FIREBASE-DEVICE-TOKEN #5");
-        	response = FirebaseUtil.exec (multi, title, body); // no link
+            List <String> tokens = new ArrayList <> ();
+        	tokens.add ("FIREBASE-DEVICE-TOKEN #1");
+        	tokens.add ("FIREBASE-DEVICE-TOKEN #2");
+        	tokens.add ("FIREBASE-DEVICE-TOKEN #3");
+        	tokens.add ("FIREBASE-DEVICE-TOKEN #4");
+        	tokens.add ("FIREBASE-DEVICE-TOKEN #5");
+        	response = FirebaseUtil.exec (tokens, title, body); // no link
         	// response = FirebaseUtil.send (multi, title, body); // no link
         	// response = FirebaseUtil.exec (multi, title, body, link); // use link 
         	// response = FirebaseUtil.send (multi, title, body, link); // use link 
@@ -40,7 +40,7 @@ public class SampleMultiple
         	log.info ("body : " + body);
         	log.info ("link : " + link);
             log.info ("--------------------------------------------------");
-        	log.info ("response : [" + multi.size () + "] " + response);
+        	log.info ("response : [" + tokens.size () + "] " + response);
         	log.info ("--------------------------------------------------");
         } catch (Exception e) { e.printStackTrace (); }
     }
