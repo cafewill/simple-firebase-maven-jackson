@@ -32,9 +32,9 @@ public class SampleMultiple
         	tokens.add ("FIREBASE-DEVICE-TOKEN #4");
         	tokens.add ("FIREBASE-DEVICE-TOKEN #5");
         	response = FirebaseUtil.exec (tokens, title, body); // no link
-        	// response = FirebaseUtil.send (multi, title, body); // no link
-        	// response = FirebaseUtil.exec (multi, title, body, link); // use link 
-        	// response = FirebaseUtil.send (multi, title, body, link); // use link 
+        	// response = FirebaseUtil.send (tokens, title, body); // no link
+        	// response = FirebaseUtil.exec (tokens, title, body, link); // use link 
+        	// response = FirebaseUtil.send (tokens, title, body, link); // use link 
             log.info ("--------------------------------------------------");
         	log.info ("title : " + title);
         	log.info ("body : " + body);

@@ -26,9 +26,9 @@ public class SampleSingle
             
             String token = "FIREBASE-DEVICE-TOKEN";
         	response = FirebaseUtil.exec (token, title, body); // no link
-        	// response = FirebaseUtil.send (single, title, body); // no link
-        	// response = FirebaseUtil.exec (single, title, body, link); // use link 
-        	// response = FirebaseUtil.send (single, title, body, link); // use link 
+        	// response = FirebaseUtil.send (token, title, body); // no link
+        	// response = FirebaseUtil.exec (token, title, body, link); // use link 
+        	// response = FirebaseUtil.send (token, title, body, link); // use link 
             log.info ("--------------------------------------------------");
         	log.info ("title : " + title);
         	log.info ("body : " + body);
