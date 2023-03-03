@@ -16,6 +16,9 @@ This is a simple firebase util (maven, jackson)
 
 ## See Also
 
+* https://github.com/cafewill/simple-firebase-php
+* https://github.com/cafewill/simple-firebase-python
+
 * https://github.com/cafewill/simple-firebase-maven-gson
 * https://github.com/cafewill/simple-firebase-maven-jackson
 * https://github.com/cafewill/simple-firebase-gradle-gson
