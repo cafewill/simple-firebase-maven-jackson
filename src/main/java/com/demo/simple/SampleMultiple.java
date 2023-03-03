@@ -17,31 +17,27 @@ public class SampleMultiple
     {
         try
         {
-        	Date at = new Date ();
-            String title = String.format ("DEMO %s", new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss #SSS").format (at));
+        	Date date = new Date ();
+            String title = String.format ("DEMO %s", new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss #SSS").format (date));
             String body = "DEMO Some message here!";
-            String link = String.format ("https://github.com/cafewill?%s", new SimpleDateFormat ("yyyyMMddHHmmssSSS").format (at));
+            String link = String.format ("https://github.com/cafewill?%s", new SimpleDateFormat ("yyyyMMddHHmmssSSS").format (date));
             
-            String response = "";
-            
-            // max : 1 ~ 1000
-            List <String> tokens = new ArrayList <> ();
-        	tokens.add ("FIREBASE-DEVICE-TOKEN #1");
-        	tokens.add ("FIREBASE-DEVICE-TOKEN #2");
-        	tokens.add ("FIREBASE-DEVICE-TOKEN #3");
-        	tokens.add ("FIREBASE-DEVICE-TOKEN #4");
-        	tokens.add ("FIREBASE-DEVICE-TOKEN #5");
-        	response = FirebaseUtil.exec (tokens, title, body); // no link
-        	// response = FirebaseUtil.send (tokens, title, body); // no link
-        	// response = FirebaseUtil.exec (tokens, title, body, link); // use link 
-        	// response = FirebaseUtil.send (tokens, title, body, link); // use link 
-            log.info ("--------------------------------------------------");
-        	log.info ("title : " + title);
-        	log.info ("body : " + body);
-        	log.info ("link : " + link);
-            log.info ("--------------------------------------------------");
-        	log.info ("response : [" + tokens.size () + "] " + response);
-        	log.info ("--------------------------------------------------");
+            List <String> token = new ArrayList <> ();
+        	token.add ("FIREBASE-DEVICE-TOKEN #1");
+        	token.add ("FIREBASE-DEVICE-TOKEN #2");
+        	token.add ("FIREBASE-DEVICE-TOKEN #3");
+        	token.add ("FIREBASE-DEVICE-TOKEN #4");
+        	token.add ("FIREBASE-DEVICE-TOKEN #5");
+
+        	String response = FirebaseUtil.exec (token, title, body); // no link
+        	// response = FirebaseUtil.send (token, title, body); // no link
+        	// response = FirebaseUtil.exec (token, title, body, link); // use link 
+        	// response = FirebaseUtil.send (token, title, body, link); // use link 
+        	
+        	log.info ("title : {}", title);
+        	log.info ("body : {}", body);
+        	log.info ("link : {}", link);
+        	log.info ("response : [{}] {}", token.size (), response);
         } catch (Exception e) { e.printStackTrace (); }
     }
 }
