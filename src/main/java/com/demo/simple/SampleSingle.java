@@ -1,14 +1,11 @@
 package com.demo.simple;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import com.demo.simple.util.FirebaseUtil;
 
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.ArrayList;
-import java.text.SimpleDateFormat;
 
 @Slf4j
 public class SampleSingle
@@ -17,12 +14,12 @@ public class SampleSingle
     {
         try
         {
+            String token = "FIREBASE-DEVICE-TOKEN";
+            
         	Date date = new Date ();
             String title = String.format ("DEMO %s", new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss #SSS").format (date));
             String body = "DEMO Some message here!";
             String link = String.format ("https://github.com/cafewill?%s", new SimpleDateFormat ("yyyyMMddHHmmssSSS").format (date));
-            
-            String token = "FIREBASE-DEVICE-TOKEN";
             
             String response = FirebaseUtil.exec (token, title, body); // no link
         	// response = FirebaseUtil.send (token, title, body); // no link

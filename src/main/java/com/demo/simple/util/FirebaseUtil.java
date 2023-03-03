@@ -16,10 +16,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class FirebaseUtil
 {
-    static final String CHARSET_KEY = "CharSet";
-    static final String CHARSET_VALUE = "UTF-8";
+    static final String CHARSET = "UTF-8";
 	static final String FIREBASE_SERVER = "https://fcm.googleapis.com/fcm/send";
-	static final String FIREBASE_SERVER_KEY = "YOUR-SERVER-KEY";
+	static final String FIREBASE_SERVER_KEY = "FIREBASE-SERVER-KEY";
 	
     public static FirebaseStatus send (String token, String title, String body)
     {
@@ -45,7 +44,7 @@ public class FirebaseUtil
         try
         {
         	String response = exec (token, title, body, link);
-        	Map <String, Object> json = (new ObjectMapper ()).readValue (response, Map.class);
+			Map <String, Object> json = (new ObjectMapper ()).readValue (response, Map.class);
         	int check = 1;
         	int success = Integer.valueOf (json.get ("success").toString ());
             if (check != success) status = FirebaseStatus.FAILURE;
@@ -62,7 +61,7 @@ public class FirebaseUtil
         try
         {
         	String response = exec (token, title, body, null);
-        	Map <String, Object> json = (new ObjectMapper ()).readValue (response, Map.class);
+			Map <String, Object> json = (new ObjectMapper ()).readValue (response, Map.class);
         	int check = token.size ();
         	int success = Integer.valueOf (json.get ("success").toString ());
             if (0 == success) status = FirebaseStatus.FAILURE;
@@ -80,7 +79,7 @@ public class FirebaseUtil
         try
         {
         	String response = exec (token, title, body, link);
-        	Map <String, Object> json = (new ObjectMapper ()).readValue (response, Map.class);
+			Map <String, Object> json = (new ObjectMapper ()).readValue (response, Map.class);
         	int check = token.size ();
         	int success = Integer.valueOf (json.get ("success").toString ());
             if (0 == success) status = FirebaseStatus.FAILURE;
@@ -184,11 +183,11 @@ public class FirebaseUtil
             client.setDoInput (true);
             client.setDoOutput (true);
             client.setRequestMethod ("POST");
-            client.setRequestProperty (CHARSET_KEY, CHARSET_VALUE);
+            client.setRequestProperty ("Accept-Charset", CHARSET);
             client.setRequestProperty ("Connection", "keep-alive");
             client.setRequestProperty ("Cache-control", "no-cache");
             client.setRequestProperty ("Authorization", "key=" + FIREBASE_SERVER_KEY);
-            client.setRequestProperty ("Content-Type", "application/json; charset=UTF-8");
+            client.setRequestProperty ("Content-Type", "application/json; Charset=" + CHARSET);
         	
             DataOutputStream stream = new DataOutputStream (client.getOutputStream ());
             stream.write (data.getBytes ("UTF-8"));
