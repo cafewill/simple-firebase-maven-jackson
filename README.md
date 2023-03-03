@@ -1,6 +1,6 @@
 # simple-firebase-maven-jackson
 
-This is a simple firebase util (maven, jackson)
+This is a simple firebase util (java, maven, jackson)
 
 ## Features
 
